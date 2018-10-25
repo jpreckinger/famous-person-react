@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Header from './components/Header/Header';
-import FamousPerson from './components/FamousPerson/FamousPerson';
+import Header from '../Header/Header';
+import FamousPerson from '../FamousPerson/FamousPerson';
 import './App.css';
 
 class App extends Component {
@@ -12,6 +12,6 @@ class App extends Component {
       </div>
     );
   }
-}
-
+} 
+ 
 export default App;

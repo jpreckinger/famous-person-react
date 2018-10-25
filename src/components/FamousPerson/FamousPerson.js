@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import FamousPersonForm from '../FamousPersonForm/FamousPersonForm';
+import FamousPersonList from '../FamousPersonList/FamousPersonList';
 
 class FamousPerson extends Component {
 
@@ -6,7 +8,8 @@ class FamousPerson extends Component {
         person: {
             name: '',
             role: ''
-        }
+        },
+        people: []
     }
 
     handleChangeFor = (propertyName) => {
@@ -21,17 +24,27 @@ class FamousPerson extends Component {
     }
 
     logPerson = (event) => {
+        event.preventDefault();
         console.log(this.state.person);
+        let person = this.state.person;
+        this.setState({
+            people: [...this.state.people, person],
+            person: {
+                name: '',
+                role: ''
+            }
+        })
     }
 
   render() {
     return (
-     <section>
-         <input onChange={this.handleChangeFor('name')} placeholder="name" />
-         <input onChange={this.handleChangeFor('role')} placeholder="role" />
-         <button onClick={this.logPerson}>Submit</button>
-        <p>{this.state.person.name} is famous for {this.state.person.role}</p>
-     </section>
+    <div>
+            <FamousPersonForm handleChangeFor={this.handleChangeFor}
+                              person={this.state.person}
+                              logPerson={this.logPerson} />
+            <p>{this.state.person.name} is famous for {this.state.person.role}</p>
+            <FamousPersonList list={this.state.people}/>
+     </div>
     );
   }
 }

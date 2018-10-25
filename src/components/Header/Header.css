@@ -1,5 +1,5 @@
 .App-header {
-    background-color: #12d3d3;
+    background-image: linear-gradient(-90deg, #008CFF, #FF7300);
     min-height: 15vh;
     display: flex;
     flex-direction: column;
@@ -10,5 +10,5 @@
   }
 
   h1 {
-      color: palevioletred;
+      color: black;
   }
